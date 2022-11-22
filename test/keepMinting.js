@@ -1,5 +1,5 @@
 const fs = require('fs');
-const { MINTER, BOT } = require('../src/data/storage');
+const { TARGET, BOT } = require('../src/data/storage');
 const { brain: { contract }, truncate } = require('../src/utils');
 const sleep = require('../src/utils/sleep');
 
@@ -11,7 +11,7 @@ const keepMinting = async () => {
     try {
         for (let i = (parseInt(count) + 1); i < 1000000000000000; i++) {
             await sleep(10000);
-            contract.methods.mint().send({ from: MINTER });
+            contract.methods.mint().send({ from: TARGET });
             fs.writeFileSync('./test/count.txt', `${i}`);
         }
     }

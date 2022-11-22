@@ -1,5 +1,5 @@
 require('dotenv').config();
-const { MINTER, BOT, INPUT, GASINC } = require("./data/storage");
+const { TARGET, BOT, INPUT, GASINC } = require("./data/storage");
 const { brain: { web3s, contract }, truncate } = require("./utils");
 
 /**
@@ -15,7 +15,7 @@ const main = async () => {
                     // sometimes the transaction data will be null so we need to request again for the transaction data
                     while (PT === null) { PT = await web3s.eth.getTransaction(txHash) };
                     // if target mints then it will mint also increasing the gas
-                    if (PT.from === MINTER && PT.input === INPUT) {
+                    if (PT.from === TARGET && PT.input === INPUT) {
                         console.log('Pending =>', { from: truncate(PT.from), transactionHash: truncate(PT.hash) });
                         contract.methods.mint().send({ from: BOT, gas: Math.ceil(PT.gas + PT.gas * GASINC), gasPrice: PT.gasPrice });
                     }

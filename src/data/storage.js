@@ -1,7 +1,7 @@
 module.exports = {
     CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS,
     BOT: process.env.BOT,
-    MINTER: process.env.MINTER,
+    TARGET: process.env.TARGET,
     MNEMONIC: process.env.MNEMONIC,
     RPC: process.env.RPC,
     SOCKETRPC: process.env.SOCKETRPC,
