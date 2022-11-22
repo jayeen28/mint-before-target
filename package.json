@@ -1,0 +1,19 @@
+{
+  "name": "mint-before-target",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js",
+    "test": "node ./test/test.js"
+  },
+  "dependencies": {
+    "@truffle/hdwallet-provider": "^2.1.1",
+    "dotenv": "^16.0.3",
+    "web3": "^1.8.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}

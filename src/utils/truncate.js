@@ -1,0 +1,1 @@
+module.exports = txt => txt.length <= 4 ? txt : txt.slice(0, 2) + '.....' + txt.slice(txt.length - 4, txt.length);
