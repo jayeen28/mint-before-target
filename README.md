@@ -1,0 +1,1 @@
+### Checkout the .env.example file 
